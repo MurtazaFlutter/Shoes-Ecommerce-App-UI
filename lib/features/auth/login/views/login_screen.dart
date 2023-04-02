@@ -32,7 +32,8 @@ class LoginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  BackButtonWidget(
+                  AppBarButton(
+                    svg: 'lib/assets/icons/back.svg',
                     onTapButton: () {
                       Navigator.pop(context);
                     },

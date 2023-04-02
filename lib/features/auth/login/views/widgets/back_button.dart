@@ -4,9 +4,11 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../../constants/constants.dart';
 
-class BackButtonWidget extends StatelessWidget {
+class AppBarButton extends StatelessWidget {
+  final String svg;
   final VoidCallback onTapButton;
-  const BackButtonWidget({
+  const AppBarButton({
+    required this.svg,
     required this.onTapButton,
     super.key,
   });
@@ -25,7 +27,7 @@ class BackButtonWidget extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(15.r),
           child: SvgPicture.asset(
-            'lib/assets/icons/back.svg',
+            svg,
           ),
         ),
       ),
