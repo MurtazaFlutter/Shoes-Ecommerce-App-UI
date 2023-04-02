@@ -23,7 +23,7 @@ class SearchTextField extends StatelessWidget {
         style: kLight.copyWith(fontSize: 14.h),
         decoration: InputDecoration(
           border: InputBorder.none,
-          hintText: 'Looking for shoes',
+          hintText: 'Looking for shoes?',
           contentPadding: EdgeInsets.all(12.r),
           hintStyle: kLight.copyWith(fontSize: 14.h),
           prefixIcon: Icon(

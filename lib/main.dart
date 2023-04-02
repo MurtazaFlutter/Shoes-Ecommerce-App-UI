@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:shoes_ecommerce_app/features/home/views/home_screen.dart';
-
+import 'package:provider/provider.dart';
+import 'package:shoes_ecommerce_app/providers/brand_provider.dart';
+import 'common/bottom_nav_bar_screen.dart';
 import 'constants/constants.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => BrandsProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
-          home: const HomeScreen(),
+          home: const BottomNavBarScreen(),
         );
       },
     );

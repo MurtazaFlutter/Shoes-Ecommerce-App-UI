@@ -22,6 +22,13 @@ class GoogleAuthButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Image.asset(
+              'lib/assets/icons/google.png',
+              height: 35.h,
+            ),
+            SizedBox(
+              width: 8.w,
+            ),
             Text(
               'Sign in with google',
               style: kRegular.copyWith(fontSize: 18.h, color: kDarkGrey),

@@ -14,7 +14,11 @@ class HomeCustomAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        AppBarButton(svg: 'lib/assets/icons/back.svg', onTapButton: () {}),
+        Image.asset(
+          'lib/assets/icons/menu.png',
+          width: 44.w,
+          height: 44.h,
+        ),
         Column(
           children: [
             Text(
