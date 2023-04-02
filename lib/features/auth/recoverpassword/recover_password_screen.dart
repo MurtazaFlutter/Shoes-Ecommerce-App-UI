@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import '../../../common/custom_text_feld.dart';
 import '../../../common/default_button.dart';
 import '../../../common/validator.dart';
-import '../login/views/widgets/back_button.dart';
+import '../../../common/back_button.dart';
 import '../login/views/widgets/welcome_text.dart';
 
 class RecoverPasswordScreen extends StatelessWidget {

@@ -9,7 +9,7 @@ import '../../../../common/validator.dart';
 import '../../recoverpassword/recover_password_screen.dart';
 import '../../widgets/google_auth_button.dart';
 import '../../widgets/select_account.dart';
-import 'widgets/back_button.dart';
+import '../../../../common/back_button.dart';
 import 'widgets/welcome_text.dart';
 
 class LoginScreen extends StatelessWidget {

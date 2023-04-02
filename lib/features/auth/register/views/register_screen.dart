@@ -5,7 +5,7 @@ import 'package:shoes_ecommerce_app/features/auth/login/views/login_screen.dart'
 import '../../../../common/custom_text_feld.dart';
 import '../../../../common/default_button.dart';
 import '../../../../common/validator.dart';
-import '../../login/views/widgets/back_button.dart';
+import '../../../../common/back_button.dart';
 import '../../login/views/widgets/welcome_text.dart';
 import '../../widgets/google_auth_button.dart';
 import '../../widgets/select_account.dart';

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shoes_ecommerce_app/providers/brand_provider.dart';
-import 'common/bottom_nav_bar_screen.dart';
 import 'constants/constants.dart';
+import 'features/productdetail/views/product_detail_screen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -21,11 +21,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
-          home: const BottomNavBarScreen(),
-        );
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
+            home: const ProductDetailScreen());
       },
     );
   }

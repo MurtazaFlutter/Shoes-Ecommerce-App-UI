@@ -33,17 +33,21 @@ class _BottomNavBarScreenState extends State<BottomNavBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _selectedScreen,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(IconlyBold.home),
-            label: 'Home',
+      bottomNavigationBar: Stack(
+        children: [
+          BottomNavigationBar(
+            onTap: _selectedScreen,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(IconlyBold.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(IconlyBold.home),
+                label: 'Home',
+              )
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(IconlyBold.home),
-            label: 'Home',
-          )
         ],
       ),
     );
