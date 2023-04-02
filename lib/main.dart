@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoes_ecommerce_app/features/home/views/home_screen.dart';
 
 import 'constants/constants.dart';
-import 'features/auth/login/views/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(scaffoldBackgroundColor: kScaffoldColor),
-          home: const LoginScreen(),
+          home: const HomeScreen(),
         );
       },
     );
