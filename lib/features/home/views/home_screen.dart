@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:shoes_ecommerce_app/constants/constants.dart';
+import 'package:provider/provider.dart';
+import 'package:shoes_ecommerce_app/providers/products_provider.dart';
+import '../../../common/product_detail_widget.dart';
 import '../widgets/home_app_bar.dart';
 import '../widgets/new_arrival_promotion.dart';
 import '../widgets/product_type.dart';
@@ -13,6 +15,8 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final productsProvider =
+        Provider.of<ProductsProvider>(context, listen: false);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -36,13 +40,22 @@ class HomeScreen extends StatelessWidget {
                       title2: 'See all',
                     ),
                     Gap(16.h),
-                    Row(
-                      children: [
-                        const ProductWidget(),
-                        Gap(21.w),
-                        const ProductWidget(),
-                      ],
-                    ),
+                    GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemCount: productsProvider.getProdcuts.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                        ),
+                        itemBuilder: ((context, index) {
+                          return Padding(
+                            padding: EdgeInsets.all(8.0.r),
+                            child: ChangeNotifierProvider.value(
+                                value: productsProvider.getProdcuts[index],
+                                child: const ProductDetailWidget()),
+                          );
+                        })),
                     Gap(24.h),
                     const ProductType(
                       title1: 'New Arrivals',
@@ -55,77 +68,6 @@ class HomeScreen extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class ProductWidget extends StatelessWidget {
-  const ProductWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200.h,
-      width: 157.w,
-      decoration: BoxDecoration(
-          color: kWhiteColor, borderRadius: BorderRadius.circular(16.r)),
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 12.w,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Gap(20.h),
-            Expanded(
-              child: Image.asset(
-                'lib/assets/images/image1.svg',
-                // width: 160.w,
-                // height: 80.38.h,
-              ),
-            ),
-            Gap(20.h),
-            Text(
-              'BEST SELLER',
-              style: kLight.copyWith(
-                fontSize: 12.h,
-                color: kDefaultColor,
-              ),
-            ),
-            Gap(4.h),
-            Text(
-              'Nike Jordan',
-              style: kLight.copyWith(
-                fontSize: 16.h,
-                color: kDarkGrey,
-              ),
-            ),
-            Gap(12.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  '\$493.00',
-                  style: kLight.copyWith(
-                    fontSize: 14.h,
-                    color: kDarkGrey,
-                  ),
-                ),
-                Align(
-                    alignment: Alignment.bottomRight,
-                    child: Container(
-                      height: 35.5.h,
-                      width: 34.w,
-                      decoration: const BoxDecoration(color: kDefaultColor),
-                    ))
-              ],
-            ),
-          ],
         ),
       ),
     );

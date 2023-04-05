@@ -44,7 +44,6 @@ class _BottomNavBarV2State extends State<BottomNavBarV2> {
           Positioned(
             bottom: 0,
             left: 0,
-            right: 0,
             child: SizedBox(
               width: size.width,
               height: 80,
